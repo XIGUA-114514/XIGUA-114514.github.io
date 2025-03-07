@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>洗头佬工作室</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-size: 400% 400%;
+            color: #ffffff;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                #ff9696,
+                #85c1e9,
+                #a2d5ab,
+                #d7bde2,
+                #ff9696
+            );
+            z-index: -1;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+            display: block;
+        }
+
+        .back-link:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            // 获取鼠标位置
+            const x = e.clientX / window.innerWidth * 100;
+            const y = e.clientY / window.innerHeight * 100;
+
+            // 设置背景位置
+            document.body.style.backgroundPosition = `${x}% ${y}%`;
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>网站</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="services.html">作品</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main class="content">
+            <h2>首页</h2>
+            <p>欢迎访问我们网站！</p>
+            <h3>最新消息</h3>
+            <ul>
+                <li>2025年3月7日：网站上线！</li>
+                <li>欢迎来到我们的社区</li>
+                <a href="https://shequ.codemao.cn/work_shop/24668" target="_blank">访问我们的工作室</a>
+            </ul>
+        </main>
+    </div>
+
+    <footer>
+        <p>© 2025 洗头佬工作室. 保留所有权利。</p>
+    </footer>
+</body>
+</html>
