@@ -102,6 +102,32 @@
             bottom: 0;
             width: 100%;
         }
+
+        .emoji {
+            position: fixed;
+            font-size: 24px;
+            color: #333;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: fall 1.5s ease-in-out;
+            opacity: 0;
+        }
+
+        @keyframes fall {
+            0% {
+                top: -50px;
+                opacity: 0;
+            }
+            50% {
+                top: 50%;
+                opacity: 1;
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
     </style>
     <script>
         document.addEventListener('mousemove', function(e) {
@@ -112,6 +138,34 @@
             // 设置背景位置
             document.body.style.backgroundPosition = `${x}% ${y}%`;
         });
+
+        const emojis = [
+            '😀', '😂', '😍', '😎', '😘', '😜', '😭', '😱', '🥳', '🤗',
+            '🥰', '😘', '🤔', '😔', '😏'
+        ];
+
+        document.addEventListener('click', (event) => {
+            // 创建表情元素
+            const emoji = document.createElement('div');
+            emoji.className = 'emoji';
+            emoji.textContent = getRandomEmoji();
+
+            // 随机设置表情的水平位置
+            const randomLeft = Math.random() * 100; // 随机生成0到100之间的百分比
+            emoji.style.left = `${randomLeft}%`;
+
+            // 将表情添加到页面
+            document.body.appendChild(emoji);
+
+            // 在动画结束后删除表情
+            setTimeout(() => {
+                document.body.removeChild(emoji);
+            }, 1500);
+        });
+
+        function getRandomEmoji() {
+            return emojis[Math.floor(Math.random() * emojis.length)];
+        }
     </script>
 </head>
 <body>
